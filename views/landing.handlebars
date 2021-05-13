@@ -1,1 +1,12 @@
 <h2>Home</h2>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <ul>
+            {{#each contacts}}
+                <li class="list-group-item">
+                    <p>{{this.name}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </div>   
+</div>
