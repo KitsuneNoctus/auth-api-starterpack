@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+const passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+const cookieSession = require('cookie-session');
 
 const app = express();
+app.use(express.static(__dirname));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,19 +23,48 @@ require('./data/db');
 // Middleware
 const exphbs  = require('express-handlebars');
 
-var checkAuth = (req, res, next) => {
-  console.log("Checking authentication");
-  if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
-    req.user = null;
-  } else {
-    var token = req.cookies.nToken;
-    var decodedToken = jwt.decode(token, { complete: true }) || {};
-    req.user = decodedToken.payload;
-  }
+// cookieSession config
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000, // One day in milliseconds
+  keys: ['randomstringhere']
+}));
 
-  next();
-};
-app.use(checkAuth);
+app.use(passport.initialize()); // Used to initialize passport
+app.use(passport.session()); // Used to persist login sessions
+
+var userProfile;
+
+// Strategy config
+passport.use(new GoogleStrategy({
+  // https://www.loginradius.com/blog/async/google-authentication-with-nodejs-and-passportjs/
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: "http://localhost:3000/auth/google/callback"
+},
+  function(accessToken, refreshToken, profile, done) {
+    userProfile=profile;
+    return done(null, userProfile);
+  }
+));
+
+// Used to stuff a piece of information into a cookie
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+// Used to decode the received cookie and persist session
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+
+// Middleware to check if the user is authenticated
+function isUserAuthenticated(req, res, next) {
+  if (req.user) {
+      next();
+  } else {
+      res.send('You must login!');
+  }
+}
 
 app.use(express.static('public'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -39,6 +72,7 @@ app.set('view engine', 'handlebars');
 
 // Controllers
 require('./controllers/landing.js')(app);
+require('./controllers/auth.js')(app);
 
 app.listen(3000, () => {
     console.log('API listening on port http://localhost:3000!');
