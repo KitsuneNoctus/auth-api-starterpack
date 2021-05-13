@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 
-require('./data/db');
+require('./data/bookeepr-db');
 
 // Middleware
 const exphbs  = require('express-handlebars');
