@@ -6,6 +6,7 @@ const cookieSession = require('cookie-session');
 
 
 module.exports = (app) => {
+   console.log("Check 3")
    // TODO: Implement authentication controller.
    // passport.authenticate middleware is used here to authenticate the request
    app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));

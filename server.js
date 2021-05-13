@@ -47,6 +47,7 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+console.log("Check 1")
 // Used to stuff a piece of information into a cookie
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -59,6 +60,7 @@ passport.deserializeUser((user, done) => {
 
 // Middleware to check if the user is authenticated
 function isUserAuthenticated(req, res, next) {
+  console.log("Check 1isAuth")
   if (req.user) {
       next();
   } else {
@@ -71,8 +73,10 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Controllers
+console.log("Check 2")
 require('./controllers/landing.js')(app);
 require('./controllers/auth.js')(app);
+require('./controllers/contacts.js')(app);
 
 app.listen(3000, () => {
     console.log('API listening on port http://localhost:3000!');

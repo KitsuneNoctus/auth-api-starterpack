@@ -5,6 +5,9 @@ const ContactSchema = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     phone: { type: String, required: true },
+    socialone: { type: String, required: false },
+    socialtwo: { type: String, required: false },
+    private: { type: Boolean, required: true}
 });
 
 module.exports = mongoose.model("Contact", ContactSchema);
