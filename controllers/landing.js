@@ -1,6 +1,8 @@
 const Contact = require('../models/contact');
 
 module.exports = (app) => {
+  
+    //READ
     app.get('/', (req, res) => {
         Contact.find({}).lean()
         .then(contacts => {

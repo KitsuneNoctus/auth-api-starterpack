@@ -5,6 +5,8 @@
             {{#each contacts}}
                 <li class="list-group-item">
                     <p>{{this.name}}</p>
+                    <a href="/delete/{{this._id}}">Delete</a>
+                    <a href="/contacts-update/{{this._id}}">Update</a>
                 </li>
             {{/each}}
         </ul>
