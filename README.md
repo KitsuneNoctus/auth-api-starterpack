@@ -6,6 +6,7 @@
 
 Custom, authenticated API instructions and starter pack for BEW 1.3 students!
 
+### The Project Developed Here
 For details on the project being developed, look [here](https://kitsunenoctus.github.io/auth-api-starterpack/)
 
 ## Installation
