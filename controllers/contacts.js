@@ -1,4 +1,5 @@
 const Contact = require('../models/contact');
+var ObjectId = require('mongodb').ObjectID;
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 module.exports = (app) => {
@@ -24,6 +25,28 @@ module.exports = (app) => {
     });
 
     //UPDATE
+    // app.put('/contacts-update', (req, res) => {
+    //     const contactToUpdate = null
+    //     Contact.find({_id: req.body.ObjectID}, (err,contact) => {
+    //         if (err) contact.log(err)
+    //         else contactToUpdate = contact
+    //     })
+    //     if (contactToUpdate){
+    //         Contact.updateOne({ _id: contactToUpdate},{
+    //             $set:{
+    //                 "name": req.body.name,
+    //                 "email": req.body.email,
+    //                 "phone": req.body.phone,
+    //                 "socialone": req.body.socialone,
+    //                 "socialtwo": req.body.socialtwo,
+    //                 "private": req.body.private
+    //             }
+    //         })
+    //     }
+    //     return res.redirect(`/`);
+        
+    // });
+
     app.get('/contacts-update/:id', (req, res) => {
         Contact.findById(req.params.id).lean()
         .then(contact => {
@@ -35,7 +58,7 @@ module.exports = (app) => {
     });
 
     app.post("/contacts-update/:id", (req, res) => {
-        Contact.updateOne({ _id: req.body.id},{
+        Contact.updateOne({ _id: req.params.id},{
             $set:{
                 "name": req.body.name,
                 "email": req.body.email,
