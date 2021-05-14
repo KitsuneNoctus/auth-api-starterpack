@@ -1,8 +1,8 @@
 # Bookeepr Documentation
-For those who are forgetfull and need a little help remembering their important information, from:
+To keep track important information (currently contacts only):
 * Contacts
-* Account Info
-* New Destinations
+* Account Info - N/A
+* New Destinations - N/A
 
 ## Installation
 
@@ -16,8 +16,16 @@ For those who are forgetfull and need a little help remembering their important 
 1. Execute `npm start` to run the development server.
 
 ## Development
+[Project Repository](https://github.com/KitsuneNoctus/auth-api-starterpack)
+Currently in its first stages of development. Ver. 1.0.0
+
+### How to Conribute
+1. Fork the project over, and clone from your repository
+1. Follow the steps of [installation](#Installation) to get all packages
+1. Continue to make changes on your local
 
 ## Deployment
+> Currently not deployed
 
 ### Heroku
 
