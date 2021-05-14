@@ -1,13 +1,15 @@
+#Bookeepr Project
+Documents for this project (here)[https://kitsunenoctus.github.io/auth-api-starterpack/]
+> Using the starter pack refernced below
+
 # 🔐 auth-api-starterpack
+(Code found here)[https://github.com/droxey/auth-api-starterpack]
 
 [![GitHub](https://img.shields.io/github/forks/droxey/auth-api-starterpack.svg?style=flat-square)](https://github.com/droxey/auth-api-starterpack/network)
 [![GitHub](https://img.shields.io/github/issues/droxey/auth-api-starterpack.svg?style=flat-square)](https://github.com/droxey/auth-api-starterpack/issues)
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 Custom, authenticated API instructions and starter pack for BEW 1.3 students!
-
-### The Project Developed Here
-For details on the project being developed, look [here](https://kitsunenoctus.github.io/auth-api-starterpack/)
 
 ## Installation
 
