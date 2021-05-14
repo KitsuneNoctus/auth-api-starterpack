@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/bookeepr-db";
+const url = "mongodb+srv://bew13user:bew13password@cluster0.fjtvw.mongodb.net/BEW1-3?retryWrites=true&w=majority";
 mongoose.Promise = global.Promise;
 mongoose.connect(
   url,
