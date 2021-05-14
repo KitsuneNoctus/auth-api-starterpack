@@ -24,29 +24,12 @@ module.exports = (app) => {
         console.log(req.body);
     });
 
-    //UPDATE
-    // app.put('/contacts-update', (req, res) => {
-    //     const contactToUpdate = null
-    //     Contact.find({_id: req.body.ObjectID}, (err,contact) => {
-    //         if (err) contact.log(err)
-    //         else contactToUpdate = contact
-    //     })
-    //     if (contactToUpdate){
-    //         Contact.updateOne({ _id: contactToUpdate},{
-    //             $set:{
-    //                 "name": req.body.name,
-    //                 "email": req.body.email,
-    //                 "phone": req.body.phone,
-    //                 "socialone": req.body.socialone,
-    //                 "socialtwo": req.body.socialtwo,
-    //                 "private": req.body.private
-    //             }
-    //         })
-    //     }
-    //     return res.redirect(`/`);
-        
-    // });
+    // READ
+    app.get('/contact/:id', (req, res) => {
 
+    });
+    
+    //UPDATE
     app.get('/contacts-update/:id', (req, res) => {
         Contact.findById(req.params.id).lean()
         .then(contact => {

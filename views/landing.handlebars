@@ -4,11 +4,38 @@
         <ul>
             {{#each contacts}}
                 <li class="list-group-item">
-                    <p>{{this.name}}</p>
-                    <a href="/delete/{{this._id}}">Delete</a>
-                    <a href="/contacts-update/{{this._id}}">Update</a>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {{#if this.email}}
+                                <li class="list-group-item">{{this.email}}</li>
+                            {{/if}}
+                            {{#if this.phone}}
+                                <li class="list-group-item">{{this.phone}}</li>
+                            {{/if}}
+                            {{#if this.socialone}}
+                                <li class="list-group-item">{{this.socialone}}</li>
+                            {{/if}}
+                            {{#if this.socialtwo}}
+                                <li class="list-group-item">{{this.socialtwo}}</li>
+                            {{/if}}
+                        </ul>
+                        <div class="card-body">
+                            <a href="/delete/{{this._id}}">Delete</a>
+                            <a href="/contacts-update/{{this._id}}">Update</a>
+                        </div>
+                    </div>
                 </li>
             {{/each}}
         </ul>
     </div>   
 </div>
+
+{{!-- name: { type: String, required: true },
+    email: { type: String, required: false },
+    phone: { type: String, required: false },
+    socialone: { type: String, required: false },
+    socialtwo: { type: String, required: false },
+    private: { type: Boolean, required: false} --}}
