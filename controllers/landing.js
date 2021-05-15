@@ -5,10 +5,9 @@ module.exports = (app) => {
     //READ
     app.get('/', (req, res) => {
         var currentUser = req.user;
-        console.log(currentUser)
         Contact.find({}).lean()
         .then(contacts => {
-            res.render('landing', { contacts });
+            res.render('landing', { contacts, currentUser });
         }).catch(err => {
             console.log(err.message);
         })
