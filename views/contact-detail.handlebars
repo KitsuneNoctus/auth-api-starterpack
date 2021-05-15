@@ -1,0 +1,31 @@
+<div class="container">
+    <h4>{{contact.name}}</h4>
+    <div class="row">
+        <div class="col">
+            {{#if contact.email}}
+                <div class="row">
+                    <h6>Email: </h6>
+                    <p>{{contact.email}}</p>
+                </div>
+            {{/if}}
+            {{#if contact.phone}}
+                <div class="row">
+                    <h6>Phone: </h6>
+                    <p>{{contact.phone}}</p>
+                </div>
+            {{/if}}
+            {{#if contact.socialone}}
+                <div class="row">
+                    <h6>Social: </h6>
+                    <p>{{contact.socialone}}</p>
+                </div>
+            {{/if}}
+            {{#if contact.socialtwo}}
+                <div class="row">
+                    <h6>Social: </h6>
+                    <p>{{contact.socialtwo}}</p>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -26,9 +26,15 @@ module.exports = (app) => {
 
     // READ
     app.get('/contact/:id', (req, res) => {
-
+        Contact.findById(req.params.id).lean()
+        .then(contact => {
+            res.render("contact-detail", { contact });  
+        })
+        .catch(err => {
+            console.log(err.message);
+        });
     });
-    
+
     //UPDATE
     app.get('/contacts-update/:id', (req, res) => {
         Contact.findById(req.params.id).lean()
