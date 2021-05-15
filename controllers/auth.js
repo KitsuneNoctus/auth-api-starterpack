@@ -18,11 +18,6 @@ module.exports = (app) => {
          res.redirect('/');
    });
 
-   // Secret route
-   // app.get('/secret', isUserAuthenticated, (req, res) => {
-   //    res.send('You have reached the secret route');
-   // });
-
    // Logout route
    app.get('/logout', (req, res) => {
       req.logout(); 
