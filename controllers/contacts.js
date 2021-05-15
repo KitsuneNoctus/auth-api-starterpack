@@ -6,12 +6,14 @@ module.exports = (app) => {
 
     //Show New
     app.get('/contacts/new', (req, res) => {
-        res.render('contacts-new.handlebars');
+        var currentUser = req.user;
+        res.render('contacts-new.handlebars', {currentUser});
     });
 
     //CREATE
     app.post("/contacts/new", (req, res) => {
         // res.render('contacts-new.handlebars');
+        var currentUser = req.user;
         var contact = new Contact(req.body);
         contact
         .save()
@@ -26,9 +28,10 @@ module.exports = (app) => {
 
     // READ
     app.get('/contact/:id', (req, res) => {
+        var currentUser = req.user;
         Contact.findById(req.params.id).lean()
         .then(contact => {
-            res.render("contact-detail", { contact });  
+            res.render("contact-detail", { contact, currentUser });  
         })
         .catch(err => {
             console.log(err.message);
@@ -37,9 +40,10 @@ module.exports = (app) => {
 
     //UPDATE
     app.get('/contacts-update/:id', (req, res) => {
+        var currentUser = req.user;
         Contact.findById(req.params.id).lean()
         .then(contact => {
-            res.render("contacts-update", { contact });  
+            res.render("contacts-update", { contact, currentUser });  
         })
         .catch(err => {
             console.log(err.message);
