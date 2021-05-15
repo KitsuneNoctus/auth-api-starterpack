@@ -7,13 +7,16 @@ To keep track important information (currently contacts only):
 ## About
 Bookeepr is where people can add information to contact profiles on people they know of, whether it be an industry contact, or someone from your social circle. Bookeepr allows you to create and keep track of any important contacts you make, and share them with the world.
 
-CURRENTLY, LOGIN ONLY WORK ON LOCAL MACHINES - SORRY
-
 There is hope to update this in future to do even more!
 
 ## Development
 [Project Repository](https://github.com/KitsuneNoctus/auth-api-starterpack)
 Currently in its first stages of development. Ver. 1.0.0
+
+Switch between 
+`callbackURL: "http://localhost:3000/auth/google/callback"`
+`callbackURL: "https://bookeepr-bew.herokuapp.com/auth/google/callback"`
+in the `server.js` file depending on if you are running locally or on the site
 
 ### How to Conribute
 1. Fork the project over, and clone from your repository
