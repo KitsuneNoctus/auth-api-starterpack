@@ -1,9 +1,10 @@
 # Bookeepr Project
-Documents for this project (here)[https://kitsunenoctus.github.io/auth-api-starterpack/]
+Documents for this project [here](https://kitsunenoctus.github.io/auth-api-starterpack/)
+Live [here](https://bookeepr-bew.herokuapp.com/)
 > Using the starter pack refernced below
 
 # 🔐 auth-api-starterpack
-(Code found here)[https://github.com/droxey/auth-api-starterpack]
+[Code found here](https://github.com/droxey/auth-api-starterpack)
 
 [![GitHub](https://img.shields.io/github/forks/droxey/auth-api-starterpack.svg?style=flat-square)](https://github.com/droxey/auth-api-starterpack/network)
 [![GitHub](https://img.shields.io/github/issues/droxey/auth-api-starterpack.svg?style=flat-square)](https://github.com/droxey/auth-api-starterpack/issues)

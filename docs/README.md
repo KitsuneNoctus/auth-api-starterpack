@@ -15,7 +15,7 @@ Currently in its first stages of development. Ver. 1.0.0
 1. Fork the project over, and clone from your repository
 1. Follow the steps of [installation](#Installation) to get all packages
 1. Continue to make changes on your local
-1. BE sure to have a dotenv set with the following. Setup your Google items (here)[https://console.cloud.google.com/getting-started]. If you need help, follow the items in step 1 of (this tutorial)[https://www.loginradius.com/blog/async/google-authentication-with-nodejs-and-passportjs/] to setup.
+1. BE sure to have a dotenv set with the following. Setup your Google items [here](https://console.cloud.google.com/getting-started). If you need help, follow the items in step 1 of [this tutorial](https://www.loginradius.com/blog/async/google-authentication-with-nodejs-and-passportjs/) to setup.
     ```bash
     GOOGLE_CLIENT_ID = googleClientID
     GOOGLE_CLIENT_SECRET = googleSecret
@@ -37,7 +37,7 @@ Currently in its first stages of development. Ver. 1.0.0
 
 ## Deployment
 > Currently not deployed
-(Launch)[https://bookeepr-bew.herokuapp.com/]
+[Launch](https://bookeepr-bew.herokuapp.com/)
 
 ### Heroku
 
