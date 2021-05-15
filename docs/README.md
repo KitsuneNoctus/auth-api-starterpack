@@ -7,6 +7,8 @@ To keep track important information (currently contacts only):
 ## About
 Bookeepr is where people can add information to contact profiles on people they know of, whether it be an industry contact, or someone from your social circle. Bookeepr allows you to create and keep track of any important contacts you make, and share them with the world.
 
+CURRENTLY, LOGIN ONLY WORK ON LOCAL MACHINES - SORRY
+
 There is hope to update this in future to do even more!
 
 ## Development
